@@ -10,7 +10,10 @@ def make_tea():
 
 thread = Thread(target=make_tea)
 thread.start()
-thread.join(timeout=15)
+
+# Wait for thread to finish
+# The main thread will wait for the child thread to finish
+thread.join(timeout=15)  # timeout=15 - wait 15 seconds
 
 for tea in range(5):
     print(f'Tea from MAIN thread: {tea}')
